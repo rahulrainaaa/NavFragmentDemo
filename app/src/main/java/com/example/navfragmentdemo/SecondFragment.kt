@@ -1,9 +1,7 @@
 package com.example.navfragmentdemo
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navfragmentdemo.databinding.FragmentSecondBinding
@@ -17,14 +15,29 @@ class SecondFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSecondBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        binding.buttonBack.setOnClickListener {
+            findNavController().popBackStack()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_second_fragment, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_menu_4 -> requireActivity().toast("Selected: Menu Item 4")
+            R.id.action_menu_5 -> requireActivity().toast("Selected: Menu Item 5")
+            R.id.action_menu_6 -> requireActivity().toast("Selected: Menu Item 6")
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

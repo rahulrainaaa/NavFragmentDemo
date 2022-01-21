@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_menu_4"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:orderInCategory="100"
+        android:title="Menu 4"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_menu_5"
+        android:orderInCategory="100"
+        android:title="Menu 5"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_menu_6"
+        android:orderInCategory="100"
+        android:title="Menu 6"
+        app:showAsAction="never" />
+</menu>
