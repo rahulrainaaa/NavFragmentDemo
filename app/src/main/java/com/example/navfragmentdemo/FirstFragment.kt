@@ -28,7 +28,7 @@ class FirstFragment : Fragment() {
         }
 
         binding.btnDeepLink1.setOnClickListener {
-            findNavController().navigate(Uri.parse("app://deeplink.test1/22/Android/true"))
+            findNavController().navigate(Uri.parse("app://deeplink.test1/22/FirstFrag/true"))
         }
     }
 

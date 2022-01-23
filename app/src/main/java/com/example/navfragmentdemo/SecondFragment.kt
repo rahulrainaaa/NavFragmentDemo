@@ -1,5 +1,6 @@
 package com.example.navfragmentdemo
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -25,6 +26,16 @@ class SecondFragment : Fragment() {
         binding.buttonBack.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        binding.buttonDeepLink.setOnClickListener {
+            findNavController().navigate(Uri.parse("app://deeplink.test1/31/SecondFrag/false"))
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val result1 = findNavController().currentBackStackEntry?.savedStateHandle?.get<String>("result1")
+        binding.textviewSecond.text = "Second Fragment\n $result1"
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

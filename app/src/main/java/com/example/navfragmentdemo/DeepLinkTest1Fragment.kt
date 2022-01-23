@@ -15,9 +15,11 @@ class DeepLinkTest1Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentDeepLinkTest1Binding.inflate(inflater, container, false)
 
+        var name: String? = ""
+
         arguments?.let {
             val sno = it.getInt("sno")
-            val name = it.getString("name")
+            name = it.getString("name")
             val isActive = it.getBoolean("isActive")
 
             val stringBuilder = StringBuilder()
@@ -31,7 +33,7 @@ class DeepLinkTest1Fragment : Fragment() {
 
         binding.btnDone.setOnClickListener {
             val navController = findNavController()
-            navController.previousBackStackEntry?.savedStateHandle?.set("result1", "This is deeplink test 1 fragment's result String... !!!")
+            navController.previousBackStackEntry?.savedStateHandle?.set("result1", "This is deeplink test 1 fragment's result String for name = $name... !!!")
             navController.popBackStack()
         }
 
