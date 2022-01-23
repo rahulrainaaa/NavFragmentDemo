@@ -1,11 +1,13 @@
-package com.example.navfragmentdemo
+package com.example.navfragmentdemo.demo1
 
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.navfragmentdemo.R
 import com.example.navfragmentdemo.databinding.FragmentSecondBinding
+import com.example.navfragmentdemo.toast
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

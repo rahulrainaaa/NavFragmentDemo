@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/frag_deep_link_test_1"
-        android:name="com.example.navfragmentdemo.DeepLinkTest1Fragment"
+        android:name="com.example.navfragmentdemo.demo1.DeepLinkTest1Fragment"
         android:label="Test 1"
         tools:layout="@layout/fragment_deep_link_test_1">
 
