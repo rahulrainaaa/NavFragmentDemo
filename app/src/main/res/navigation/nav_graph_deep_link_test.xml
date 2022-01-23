@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_deep_link_test">
+
+    <fragment
+        android:id="@+id/frag_deep_link_test_1"
+        android:name="com.example.navfragmentdemo.DeepLinkTest1Fragment"
+        android:label="Test 1"
+        tools:layout="@layout/fragment_deep_link_test_1">
+
+        <argument
+            android:name="sno"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="name"
+            android:defaultValue="EMPTY_STRING"
+            app:argType="string" />
+
+        <argument
+            android:name="isActive"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:action="android.intent.action.MY_ACTION"
+            app:mimeType="type/subtype"
+            app:uri="app://deeplink.test1/{sno}/{name}/{isActive}" />
+
+    </fragment>
+
+</navigation>
